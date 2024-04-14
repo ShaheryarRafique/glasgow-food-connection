@@ -16,7 +16,7 @@ Glasgow Food Connection is an innovative web platform designed to reduce food wa
 ## Project Preview
 
 ![image](https://github.com/ShaheryarRafique/glasgow-food-connection/assets/103287681/ddf60fdf-fa25-4cbf-96c6-e5276863e6cb)
-![image](https://github.com/ShaheryarRafique/glasgow-food-connection/assets/103287681/13219312-a944-490d-8bca-4aacc54c2ef4)
+![image](https://github.com/ShaheryarRafique/glasgow-food-connection/assets/103287681/3396ad49-f188-4987-a143-a1321444a946)
 
 
 ## Getting Started
@@ -43,10 +43,10 @@ npm install
 # Running the Application
 
 ### Start the server
-npm start
+```npm start```
 
 ### In a separate terminal, build the Tailwind CSS
-npm run build-css
+```npm run build-css```
 
 Visit ```http://localhost:8015``` to view the application in your web browser.
 
