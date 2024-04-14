@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>partials/head}}
+
+<body>
+    <header class="container mx-auto">
+        <div class="relative w-full">
+            {{> partials/navbar}}
+            <div class="relative bg-yellow-50">
+                <div class="container m-auto px-6 pt-32 md:px-12 lg:pt-[4.8rem] lg:px-7">
+                    <div class="flex items-center flex-wrap px-2 md:px-0">
+                        <div class="relative lg:w-8/12 lg:py-24 xl:py-32">
+                            <h1
+                                class="font-bold text-4xl text-yellow-900 md:text-7xl leading-10 tracking-wide lg:w-10/12">
+                                Join the Movement Against Food Waste </h1>
+                            <p class="text-lg mt-6 text-gray-700 lg:w-10/12">Transform surplus into sustenance, and
+                                witness how small actions can lead to <br> significant changes. Join us in the fight
+                                against food waste<a href="#" class="text-yellow-700"> Nourishing Communities</a> <br>
+                                and fostering hope—one meal at a time.
+                            </p>
+                        </div>
+                        <div class="ml-auto -mb-12 lg:-mb-16 lg:w-4/12">
+                            <img src="https://tailus.io/sources/blocks/food-delivery/preview/images/food.webp"
+                                class="relative w-128 h-auto object-contain" alt="food illustration" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-4">
+        <h2 class="text-center text-yellow-900 text-5xl font-bold tracking-tighter py-8">Currently Available Food</h2>
+        <div class="container mx-auto mt-4 flex">
+            <div class="w-1/4 p-4 bg-white border-t border-l border-r mx-8 rounded-lg z-40 h-full backdrop-blur-sm">
+                <div class="mb-6">
+                    <label for="quantity" class="block mb-2 text-lg font-semibold text-yellow-900">Max Quantity</label>
+                    <input type="number" id="quantity" name="quantity" min="1" placeholder="7"
+                        class="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded focus:ring-yellow-700 focus:border-yellow-700 block w-full p-2.5">
+                </div>
+
+                <div class="pt-2">
+                    <h6 class="mb-3 text-xl font-semibold text-yellow-900">Categories</h6>
+                    <ul class="space-y-2.5 text-sm">
+                        <li>
+                            <input type="checkbox" id="fruitsAndVegetables" name="categories"
+                                value="Fruits and Vegetables" 
+                                class="w-4 h-4 text-yellow-900 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500">
+                            <label for="fruitsAndVegetables" class="ml-2 text-base font-medium text-gray-700">Fruits and
+                                Vegetables</label>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" id="grains" name="categories" value="Grains"
+                                class="w-4 h-4 text-yellow-900 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500">
+                            <label for="grains" class="ml-2 text-base font-medium text-gray-700">Grains</label>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" id="proteins" name="categories" value="Proteins"
+                                class="w-4 h-4 text-yellow-900 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500">
+                            <label for="proteins" class="ml-2 text-base font-medium text-gray-700">Proteins</label>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" id="dairy" name="categories" value="Dairy"
+                                class="w-4 h-4 text-yellow-900 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500">
+                            <label for="dairy" class="ml-2 text-base font-medium text-gray-700">Dairy</label>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" id="fatsAndOils" name="categories" value="Fats and Oils"
+                                class="w-4 h-4 text-yellow-900 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500">
+                            <label for="fatsAndOils" class="ml-2 text-base font-medium text-gray-700">Fats and
+                                Oils</label>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" id="sweetsAndSnacks" name="categories" value="Sweets and Snacks"
+                                class="w-4 h-4 text-yellow-900 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500">
+                            <label for="sweetsAndSnacks" class="ml-2 text-base font-medium text-gray-700">Sweets and
+                                Snacks</label>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" id="beverages" name="categories" value="Beverages"
+                                class="w-4 h-4 text-yellow-900 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500">
+                            <label for="beverages" class="ml-2 text-base font-medium text-gray-700">Beverages</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mb-6 pt-6">
+                    <label for="expiryDate" class="block mb-2 text-xl font-semibold text-yellow-900">Expiry Date</label>
+                    <input type="date" id="expiryDate" name="expiryDate"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5">
+                </div>
+
+                <button id="applyFilters" class="block w-full mt-8 py-3 font-bold bg-yellow-700 text-white rounded hover:bg-yellow-300 hover:text-yellow-900">Apply
+                    Filters</button>
+            </div>
+
+            <div class="w-3/4">
+                <div id="gallery" class="grid grid-cols-3 gap-x-4 -mt-8">
+                    <!-- Items will be dynamically inserted here -->
+
+                </div>
+            </div>
+        </div>
+        <div id="loader" class="hidden fixed top-0 left-0 z-50 w-screen h-screen flex items-center justify-center bg-black bg-opacity-25">
+            <div class="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-12 w-12"></div>
+        </div>
+    </main>
+
+
+    {{> partials/footer }}
+
+    <script src="/js/filters.js"></script>
+
+</body>
+
+</html>

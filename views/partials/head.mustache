@@ -1,0 +1,26 @@
+<!-- views/partials/head.mustache -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles/styles.css" rel="stylesheet">
+    <link rel="icon" href="https://tailus.io/sources/blocks/food-delivery/preview/images/icon.png" type="image/png">
+    <title>{{title}}</title>
+    <script src="./js/navbar.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <style>
+        @keyframes spinner {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loader {
+            animation: spinner 1s linear infinite;
+            border-color: #4F46E5 transparent #4F46E5 transparent;
+        }
+    </style>
+
+</head>

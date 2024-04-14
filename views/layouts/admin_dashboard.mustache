@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>partials/head}}
+
+<body>
+    <div class="container mx-auto">
+        <nav class="bg-white text-black border shadow-sm">
+            <div class=" px-4 sm:px-6 lg:px-8">
+                <div class="flex h-16 items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-8 w-8"
+                                src="https://tailus.io/sources/blocks/food-delivery/preview/images/icon.png"
+                                alt="Your Company">
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="ml-10 flex items-baseline space-x-4">
+                                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                                <a href="#" class="bg-yellow-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                                    aria-current="page">Dashboard</a>
+                                <a href="/"
+                                    class="text-yellow-900 hover:bg-yellow-500 hover:text-white rounded-md px-3 py-2 text-base font-bold">Home</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-4 flex items-center md:ml-6">
+
+                            <!-- Profile dropdown -->
+                            {{! <div class="relative ml-3">
+                                <div>
+                                    <button type="button"
+                                        class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white "
+                                        id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                                        <img class="h-8 w-8 rounded-full"
+                                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                            alt="">
+                                    </button>
+                                </div>
+
+                            </div> }}
+                        </div>
+                    </div>
+                    <div class="-mr-2 flex md:hidden">
+                        <!-- Mobile menu button -->
+                        <button type="button"
+                            class="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                            aria-controls="mobile-menu" aria-expanded="false">
+                            <span class="absolute -inset-0.5"></span>
+                            <span class="sr-only">Open main menu</span>
+                            <!-- Menu open: "hidden", Menu closed: "block" -->
+                            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                            <!-- Menu open: "block", Menu closed: "hidden" -->
+                            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+
+        <main>
+            <!-- USER TABLE -->
+            <section class="mt-6">
+                <div class="py-6 px-10">
+                    <header class="">
+                        <h1 class="text-3xl font-bold tracking-tight text-yellow-900">All Registered User's</h1>
+                    </header>
+
+                    <div class="bg-white rounded-lg shadow-sm my-6">
+                        <table class="min-w-max w-full table-auto">
+                            <thead>
+                                <tr class="bg-yellow-300 text-yellow-900 uppercase text-sm leading-normal shadow">
+                                    <th class="py-3 px-6 text-left">Id</th>
+                                    <th class="py-3 px-6 text-left">Name</th>
+                                    <th class="py-3 px-6 text-center">Email</th>
+                                    <th class="py-3 px-6 text-center">Phone</th>
+                                    <th class="py-3 px-6 text-center">Account Type</th>
+                                    <th class="py-3 px-6 text-center">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-600 text-sm font-light bg-yellow-50" id="userTable">
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap"></td>
+                                    <td class="py-3 px-6 text-left"></td>
+                                    <td class="py-3 px-6 text-center"></td>
+                                    <td class="py-3 px-6 text-center"></td>
+                                    <td class="py-3 px-6 text-center"></td>
+                                    <td class="py-3 px-6 text-center">
+                                        <div class="flex item-center justify-center">
+                                            <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                                </svg>
+                                            </div>
+                                            <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Food Table -->
+            <section class="mt-6">
+                <div class="py-6 px-10">
+                    <header class="">
+                        <h1 class="text-3xl font-bold tracking-tight text-yellow-900">All Food Item's</h1>
+                    </header>
+
+                    <div class="bg-white rounded-lg shadow-sm my-6">
+                        <table class="min-w-max w-full table-auto">
+                            <thead>
+                                <tr class="bg-yellow-300 text-yellow-900 uppercase text-sm leading-normal shadow">
+                                    <th class="py-3 px-6 text-left">Id</th>
+                                    <th class="py-3 px-6 text-left">Name</th>
+                                    <th class="py-3 px-6 text-center">Quantity</th>
+                                    <th class="py-3 px-6 text-center">Expiry</th>
+                                    <th class="py-3 px-6 text-center">Food Category</th>
+                                    <th class="py-3 px-6 text-center">Location</th>
+                                    <th class="py-3 px-6 text-center">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="foodItemsTable" class="text-gray-600 text-sm font-light bg-yellow-50">
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap"></td>
+                                    <td class="py-3 px-6 text-left"></td>
+                                    <td class="py-3 px-6 text-center"></td>
+                                    <td class="py-3 px-6 text-center"></td>
+                                    <td class="py-3 px-6 text-center"></td>
+                                    <td class="py-3 px-6 text-center"></td>
+                                    <td class="py-3 px-6 text-center">
+                                        <div class="flex item-center justify-center">
+                                            <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                                </svg>
+                                            </div>
+                                            <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Edit User Modal -->
+    <div id="editUserModal" class="hidden fixed inset-0 z-50 overflow-auto bg-smoke-light flex">
+        <div class="relative bg-white w-full max-w-md m-auto flex-col flex rounded-lg border px-8 py-10 shadow-md">
+            <div class="modal-header">
+                <h1 class="text-center font-bold mb-4 text-yellow-800 text-2xl">Edit User Detail's</h1>
+            </div>
+            <form id="editUserForm">
+                <input type="hidden" id="editUserId">
+                <div class="mt-4">
+                    <label for="editUserName" class="mb-3 block text-base font-semibold text-yellow-700">Name:</label>
+                    <input type="text" id="editUserName"
+                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-4 text-base font-medium text-[#6B7280] outline-none focus:border-yellow-900 focus:shadow-md">
+                </div>
+                <div class="mt-4">
+                    <label for="editUserEmail" class="mb-3 block text-base font-semibold text-yellow-700">Email:</label>
+                    <input type="email" id="editUserEmail"
+                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-4 text-base font-medium text-[#6B7280] outline-none focus:border-yellow-900 focus:shadow-md">
+                </div>
+                <div class="mt-4">
+                    <label for="editUserPhone" class="mb-3 block text-base font-semibold text-yellow-700">Phone:</label>
+                    <input type="text" id="editUserPhone"
+                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-4 text-base font-medium text-[#6B7280] outline-none focus:border-yellow-900 focus:shadow-md">
+                </div>
+                <div class="mt-4">
+                    <button type="button" class="bg-yellow-500 hover:bg-red-500 text-white font-bold py-2 px-4 rounded"
+                        id="cancelButtonId">Cancel</button>
+                    <button type="submit"
+                        class="bg-yellow-500 hover:bg-yellow-200 text-white font-bold py-2 px-4 rounded">
+                        Update
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Food Item Modal -->
+    <div id="editFoodItemModal" class="hidden fixed inset-0 z-50 overflow-auto bg-smoke-light flex">
+        <div class="relative bg-white w-full max-w-md m-auto flex-col flex rounded-lg border px-8 py-10 shadow-md">
+            <div class="modal-header">
+                <h1 class="text-center font-bold mb-4 text-yellow-800 text-2xl">Edit Food Item Details</h1>
+            </div>
+            <form id="editFoodItemForm">
+                <input type="hidden" id="editFoodItemId">
+                <div class="mt-4">
+                    <label for="editFoodItemName"
+                        class="mb-3 block text-base font-semibold text-yellow-700">Name:</label>
+                    <input type="text" id="editFoodItemName" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-4 text-base font-medium text-[#6B7280] outline-none focus:border-yellow-900 focus:shadow-md">
+                </div>
+                <div class="mt-4">
+                    <label for="editFoodItemQuantity"
+                        class="mb-3 block text-base font-semibold text-yellow-700">Quantity:</label>
+                    <input type="number" id="editFoodItemQuantity" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-4 text-base font-medium text-[#6B7280] outline-none focus:border-yellow-900 focus:shadow-md">
+                </div>
+                <div class="mt-4">
+                    <label for="editFoodItemExpiry"
+                        class="mb-3 block text-base font-semibold text-yellow-700">Expiry:</label>
+                    <input type="date" id="editFoodItemExpiry" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-4 text-base font-medium text-[#6B7280] outline-none focus:border-yellow-900 focus:shadow-md">
+                </div>
+                <!-- Add more fields as needed -->
+                <div class="mt-4">
+                    <button type="button" class="bg-yellow-500 hover:bg-red-500 text-white font-bold py-2 px-4 rounded"
+                        id="cancelEditFoodItemButton">Cancel</button>
+                    <button type="submit" class="bg-yellow-500 hover:bg-yellow-200 text-white font-bold py-2 px-4 rounded">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="/js/admin.js"></script>
+</body>

@@ -1,0 +1,186 @@
+<!-- Example: views/layouts/main.mustache -->
+<!DOCTYPE html>
+<html lang="en">
+{{>partials/head}}
+
+<body>
+    <header class="container mx-auto">
+        <div class="relative w-full">
+            {{> partials/navbar}}
+            <div style="height: 70vh;" class="bg-yellow-50  flex flex-col items-center justify-center backdrop-blur-sm">
+                <div class="px-6 pt-32 md:px-12 lg:pt-[4.8rem] lg:px-7">
+                    <div class=" px-2 md:px-0 text-center">
+                        <h1 class="font-bold text-4xl text-yellow-900 md:text-7xl leading-10 tracking-wide">
+                            About KD Food
+                            <br>
+                        </h1>
+                        <p class="text-lg mt-6 text-gray-700">
+                            Information about TSPN and our App. Explanation of our food <br> donation process and about
+                            Glasgow City Council's great initiative .
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container mx-auto">
+
+        <!-- TSPN & about KD Food -->
+        <section>
+            <!-- component -->
+            <div class="py-16 bg-white">
+                <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
+                    <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
+                        <div class="md:5/12 lg:w-5/12">
+                            <img src="https://tailus.io/sources/blocks/left-image/preview/images/startup.png"
+                                alt="Helping Hands" loading="lazy" width="" height="">
+                        </div>
+                        <div class="md:7/12 lg:w-6/12">
+                            <h2 class="text-2xl text-yellow-900 font-bold md:text-4xl">TSPN and Goal of KD Food</h2>
+                            <p class="mt-6 text-gray-600" style="text-align: justify;">At the heart of our mission, KD
+                                Food
+                                acts as a catalyst for change, bridging the gap between food surplus and scarcity. We
+                                enable
+                                individuals and organizations to donate surplus food, directly supporting food pantries
+                                like
+                                those in The Scottish Pantry Network (TSPN), ensuring that no meal goes to waste. By
+                                fostering a community of giving, we tackle food insecurity and promote sustainability.
+                            </p>
+                            <p class="mt-4 text-gray-600" style="text-align: justify;">The Scottish Pantry Network
+                                (TSPN)
+                                leads the way in empowering communities, making nutritious food accessible to all.
+                                Through
+                                collaboration and support, TSPN and KD Food envision a future where food waste is
+                                significantly reduced, and every community member has access to the food they need to
+                                thrive.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Glassgow City Councul -->
+        <section>
+            <div class="py-16 bg-white">
+                <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
+                    <div class="space-y-6 md:space-y-0 md:flex md:flex-row-reverse md:gap-6 lg:items-center lg:gap-12">
+                        <div class="md:5/12 lg:w-5/12">
+                            <img class="rounded-2xl shadow-lg opacity-90 backdrop-blur-sm"
+                                src="https://www.shutterstock.com/image-photo/glasgow-modern-architecture-drone-river-600nw-1444036577.jpg"
+                                alt="Community Gardens" loading="lazy" width="" height="">
+                        </div>
+                        <div class="md:7/12 lg:w-6/12">
+                            <h2 class="text-2xl text-yellow-900 font-bold md:text-4xl">Glasgow City Council's Grant
+                                Initiative</h2>
+                            <p class="mt-6 text-gray-600" style="text-align: justify;">Glasgow City Council's innovative
+                                grant initiative seeks to revolutionize local food sustainability and accessibility. By
+                                providing financial support to small organizations and community groups, the council
+                                aims to
+                                foster the creation and expansion of community gardens and food projects. This
+                                initiative
+                                not only enhances urban green spaces but also promotes local food production, reducing
+                                food
+                                miles and supporting Glasgow's commitment to environmental sustainability.</p>
+                            <p class="mt-4 text-gray-600" style="text-align: justify;">Through empowering communities to
+                                grow their own food, the initiative also addresses food insecurity, ensuring that fresh,
+                                nutritious produce is available to those who need it most. It's a step towards a
+                                greener,
+                                more resilient Glasgow, where every citizen has access to healthy food and green spaces,
+                                contributing to the overall wellbeing of the community.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+                <!-- Food Donation Process -->
+                <section class="py-16 px-8">
+                    <h2 class="text-2xl text-yellow-900 font-bold md:text-4xl text-center pb-16">Food Donation Process</h2>
+                    <!-- component -->
+                    <div class="container">
+                        <div class="flex flex-col md:grid grid-cols-9 mx-auto p-2 text-blue-50">
+                            <!-- left -->
+                            <div class="flex flex-row-reverse md:contents">
+                                <div class="bg-white border col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md">
+                                    <h3 class="text-lg mb-1 text-yellow-900 font-bold">User Registration</h3>
+                                    <p class="leading-tight text-justify text-gray-600 ">
+                                        Users sign up as either donors (individuals with surplus food) or recipients (food pantries or individuals in need).
+                                    </p>
+                                </div>
+                                <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
+                                    <div class="h-full w-6 flex items-center justify-center">
+                                        <div class="h-full w-1 bg-yellow-300 pointer-events-none"></div>
+                                    </div>
+                                    <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-yellow-900 shadow"></div>
+                                </div>
+                            </div>
+                            <!-- right -->
+                            <div class="flex md:contents">
+                                <div class="col-start-5 col-end-6 mr-10 md:mx-auto relative ">
+                                    <div class="h-full w-6 flex items-center justify-center">
+                                        <div class="h-full w-1 bg-yellow-300 pointer-events-none"></div>
+                                    </div>
+                                    <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-yellow-900 shadow"></div>
+                                </div>
+                                <div class="bg-white border col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md">
+                                    <h3 class="font-semibold text-lg mb-1 text-yellow-900">Listing Donations</h3>
+                                    <p class="leading-tight text-justify text-gray-600">
+                                        Donors list available food items, including descriptions and any necessary details like expiration dates.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- left -->
+                            <div class="flex flex-row-reverse md:contents">
+                                <div class="bg-white border col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md">
+                                    <h3 class="font-semibold text-lg mb-1 text-yellow-900"> Matching Donations to Recipients</h3>
+                                    <p class="leading-tight text-justify text-gray-600">
+                                        The app matches donations with recipients based on criteria such as location and food type. Recipients can also manually search for and claim donations.
+                                    </p>
+                                </div>
+                                <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
+                                    <div class="h-full w-6 flex items-center justify-center">
+                                        <div class="h-full w-1 bg-yellow-300 pointer-events-none"></div>
+                                    </div>
+                                    <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-yellow-900 shadow"></div>
+                                </div>
+                            </div>
+                            <!-- left -->
+                            <div class="flex flex-row-reverse md:contents">
+                                <div class="bg-white border col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md">
+                                    <h3 class="font-semibold text-lg mb-1 text-yellow-900">Arranging Pick-Up or Delivery</h3>
+                                    <p class="leading-tight text-justify text-gray-600">
+                                        Donors and recipients coordinate directly through the app to arrange a convenient time for pick-up or delivery of the food items.
+                                    </p>
+                                </div>
+                                <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
+                                    <div class="h-full w-6 flex items-center justify-center">
+                                        <div class="h-full w-1 bg-yellow-300 pointer-events-none"></div>
+                                    </div>
+                                    <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-yellow-900 shadow"></div>
+                                </div>
+                            </div>
+                            <!-- right -->
+                            <div class="flex md:contents">
+                                <div class="col-start-5 col-end-6 mr-10 md:mx-auto relative">
+                                    <div class="h-full w-6 flex items-center justify-center">
+                                        <div class="h-full w-1 bg-yellow-300 pointer-events-none"></div>
+                                    </div>
+                                    <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-yellow-900 shadow"></div>
+                                </div>
+                                <div class="bg-white border col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md">
+                                    <h3 class="font-semibold text-lg mb-1 text-yellow-900">Confirmation and Feedback</h3>
+                                    <p class="leading-tight text-justify text-gray-600">
+                                        Both parties confirm the completion of the donation exchange through the app and have the option to leave feedback about their experience.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+    </main>
+    {{> partials/footer }}
+</body>
+
+</html>

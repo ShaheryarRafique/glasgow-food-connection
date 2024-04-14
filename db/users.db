@@ -1,0 +1,4 @@
+{"name":"Hamza Rafique","email":"shaheryar.rafique100@gmail.com","password":"$2b$10$/GahjYSE22OUA4i05JXds.UGUN7kFzyUaaa5i.kjCfyL47/v74Nue","phone":"01411234567","accountType":"Donor","_id":"A9iA9v2ugl7omDMT"}
+{"name":"KD","email":"kd@gmail.com","password":"$2b$10$CxStGUBZN9q0Y0qBAKAdyer.93zzF0942LcohjtCPKdLsn6d7Q4ZO","phone":"01411234567","accountType":"Pantry","_id":"WEDhjHPJafHZDNoO"}
+{"name":"Admin","email":"admin@gmail.com","password":"$2b$10$3Ba4BZRfg6o6VLdvqOdhE.yLpIylBVsH9XszBh6CEN4cOwaFRrlE.","accountType":"Admin","_id":"ixZSrdAspuMUnho0"}
+{"$$indexCreated":{"fieldName":"email","unique":true,"sparse":false}}

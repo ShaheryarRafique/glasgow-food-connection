@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>partials/head}}
+
+<body>
+
+    <header class="container mx-auto">
+        {{> partials/navbar}}
+    </header>
+
+    <main class="container mx-auto my-20">
+        <div class="flex items-center justify-center p-12">
+            <div class="mx-auto w-full max-w-[550px]">
+                <form method="POST">
+                    <h1 class="text-center font-bold mb-10 text-yellow-800 text-3xl">Add Food 🍗</h1>
+                    <div class="mb-5">
+                        <label for="name" class="mb-3 block text-base font-semibold text-yellow-700">
+                            Food Name
+                        </label>
+                        <input type="text" name="name" id="name" placeholder="Food Name" required
+                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-4 text-base font-medium text-[#6B7280] outline-none focus:border-yellow-900 focus:shadow-md" />
+                    </div>
+                    <div class="mb-5">
+                        <label for="quantity" class="mb-3 block text-base font-semibold text-yellow-700">
+                            Quantity
+                        </label>
+                        <input type="number" name="quantity" id="quantity" placeholder="5" required max="100" min="1"
+                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-4 text-base font-medium text-[#6B7280] outline-none focus:border-yellow-900 focus:shadow-md" />
+                    </div>
+                    <div class="mb-5">
+                        <label for="expiry" class="mb-3 block text-base font-semibold text-yellow-700">
+                            Expiry Date (MM/DD/YYYY)
+                        </label>
+                        <input type="date" name="expiry" id="expiry" required
+                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-4 text-base font-medium text-[#6B7280] outline-none focus:border-yellow-900 focus:shadow-md" />
+                    </div>
+
+                    <!-- <div class="mb-5">
+                        <label for="foodImage" class="mb-3 block text-base font-semibold text-yellow-700">
+                            Food Image
+                        </label>
+                        <label class="mt-2 w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-4 text-base font-medium text-[#6B7280] outline-none focus:border-yellow-900 focus:shadow-md relative cursor-pointer">
+                            <span id="file-chosen">No file chosen</span>
+                            <input type="file" name="foodImage" id="foodImage" required
+                                   class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
+                        </label>
+                    </div> -->
+                    
+
+                    <div class="mb-5">
+                        <label class="block mb-2 text-base font-semibold text-yellow-700" for="foodCategory">
+                            Food Category
+                        </label>
+                        <select
+                            class="w-full py-3 px-4 leading-tight rounded-md border border-[#e0e0e0] bg-white text-base font-medium text-[#6B7280] outline-none focus:border-yellow-900 focus:shadow-md appearance-none"
+                            id="foodCategory" name="foodCategory" required>
+                            <option value="" disabled selected>Select Food Category</option>
+                            <option value="Fruits and Vegetables">Fruits and Vegetables</option>
+                            <option value="Grains">Grains</option>
+                            <option value="Proteins">Proteins</option>
+                            <option value="Dairy">Dairy</option>
+                            <option value="Fats and Oils">Fats and Oils</option>
+                            <option value="Sweets and Snacks">Sweets and Snacks</option>
+                            <option value="Beverages">Beverages</option>
+                        </select>
+                    </div>
+
+                    <!-- Pick-up Point Section -->
+                    <div class="mb-5">
+                        <label for="pickupPoint" class="mb-3 block text-base font-semibold text-yellow-700">
+                            Pick-up Point
+                        </label>
+                        <input type="text" name="pickupPoint" id="pickupPoint" placeholder="Select on map"
+                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-4 text-base font-medium text-[#6B7280] outline-none focus:border-yellow-900 focus:shadow-md" />
+                        <!-- Map container -->
+                        <div id="map" style="height: 250px;" class="mt-2 border rounded-md"></div>
+                    </div>
+
+
+                    <div class="mb-5">
+                        <label for="description" class="mb-3 block text-base font-semibold text-yellow-700">
+                            Description
+                        </label>
+                        <textarea rows="4" name="description" id="description"
+                            placeholder="Write about food description" required
+                            class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-4 text-base font-medium text-[#6B7280] outline-none focus:border-yellow-900 focus:shadow-md"></textarea>
+                    </div>
+                    <div>
+                        <button
+                            class="hover:shadow-form rounded-md bg-yellow-300 hover:bg-yellow-100 active:bg-yellow-400 focus:bg-yellow-300 py-3 px-8 text-base font-semibold text-yellow-900 outline-none">
+                            Add Item
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    {{> partials/footer }}
+
+    <script src="/js/add_item.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            var map = L.map('map').setView([51.505, -0.09], 13);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            var marker;
+
+            map.on('click', function (e) {
+                var coord = e.latlng;
+                var lat = coord.lat;
+                var lng = coord.lng;
+
+                // Update input field with selected coordinates
+                document.getElementById('pickupPoint').value = "Lat: " + lat + " Long: " + lng;
+
+                // Add marker or move existing marker
+                if (marker) {
+                    marker.setLatLng(coord);
+                } else {
+                    marker = L.marker(coord).addTo(map);
+                }
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
