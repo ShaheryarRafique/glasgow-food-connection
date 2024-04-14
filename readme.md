@@ -34,7 +34,7 @@ Before starting, ensure you have Node.js and npm installed on your system. You c
 git clone https://github.com/ShaheryarRafique/glasgow-food-connection.git
 
 # Navigate to the project directory
-cd GlasgowFoodConnection
+cd glasgow-food-connection
 
 # Install dependencies
 npm install
